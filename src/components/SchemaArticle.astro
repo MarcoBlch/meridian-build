@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  url: string;
+}
+
+const { title, description, pubDate, updatedDate, url } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate || pubDate).toISOString(),
+  url: url,
+  author: {
+    '@type': 'Person',
+    name: 'Marco',
+    url: 'https://meridianbuild.dev/about',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Meridian Build',
+    url: 'https://meridianbuild.dev',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

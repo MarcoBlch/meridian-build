@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Marco at Meridian Build."
+  wide
+>
+  <div class="contact-hero">
+    <h1>Get in Touch</h1>
+    <p>
+      Whether it's about a project, a collaboration, a question about something
+      I wrote, or just to say hi. I read every email and reply within a few days.
+    </p>
+  </div>
+
+  <a href="mailto:marc@meridianbuild.dev" class="contact-email">
+    marc@meridianbuild.dev
+  </a>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <a href="https://github.com/MarcoBlch" rel="noopener noreferrer" target="_blank">
+        <div class="contact-card-name">GitHub</div>
+        <div class="contact-card-desc">Code, open source contributions, project repos</div>
+      </a>
+    </div>
+    <div class="contact-card">
+      <a href="https://x.com/marcbernard_dev" rel="noopener noreferrer" target="_blank">
+        <div class="contact-card-name">X / Twitter</div>
+        <div class="contact-card-desc">Building in public updates, short thoughts</div>
+      </a>
+    </div>
+    <div class="contact-card">
+      <a href="https://www.linkedin.com/in/marcbernard" rel="noopener noreferrer" target="_blank">
+        <div class="contact-card-name">LinkedIn</div>
+        <div class="contact-card-desc">Professional background and connections</div>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

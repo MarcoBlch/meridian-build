@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+---
+
+<BaseLayout
+  title="Blog"
+  description="Technical writing about Rails, AI, indie hacking, and building digital products as a solo developer."
+>
+  <section class="page-content">
+    <h1>Blog</h1>
+    <p class="page-intro">
+      What I learn while building. Technical deep-dives, honest numbers, and lessons from shipping solo.
+    </p>
+
+    <nav class="tag-nav">
+      <span class="tag-nav-label">Filter:</span>
+      {allTags.map(tag => (
+        <a href={`/blog/tags/${tag}`} class="tag">{tag}</a>
+      ))}
+    </nav>
+
+    <div class="posts-list">
+      {posts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          slug={post.id.replace(/\.md$/, '')}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

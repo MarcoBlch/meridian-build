@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostMeta from '../../components/PostMeta.astro';
+import SchemaArticle from '../../components/SchemaArticle.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter(post => !post.data.draft)
+    .map(post => ({
+      params: { slug: post.id.replace(/\.md$/, '') },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+// Calculate reading time (~200 words per minute)
+const wordCount = post.body?.split(/\s+/).length ?? 0;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+const slug = post.id.replace(/\.md$/, '');
+const postUrl = new URL(`/blog/${slug}`, Astro.site).toString();
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  article={true}
+>
+  <SchemaArticle
+    slot="head"
+    title={post.data.title}
+    description={post.data.description}
+    pubDate={post.data.pubDate}
+    updatedDate={post.data.updatedDate}
+    url={postUrl}
+  />
+
+  <article class="page-content blog-post">
+    <header class="post-header">
+      <h1>{post.data.title}</h1>
+      <PostMeta
+        pubDate={post.data.pubDate}
+        updatedDate={post.data.updatedDate}
+        tags={post.data.tags}
+        readingTime={readingTime}
+      />
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {post.data.project && (
+      <footer class="post-footer">
+        <p>
+          This post is about <a href={`/projects/${post.data.project}`}>{post.data.project}</a>.
+        </p>
+      </footer>
+    )}
+  </article>
+</BaseLayout>

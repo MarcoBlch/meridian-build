@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.id.replace(/\.md$/, '') },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const schema = project.data.status === 'live' ? {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: project.data.name,
+  description: project.data.description,
+  url: project.data.url,
+  applicationCategory: 'WebApplication',
+  operatingSystem: 'Any',
+  author: {
+    '@type': 'Person',
+    name: 'Marco',
+  },
+} : null;
+---
+
+<BaseLayout
+  title={project.data.name}
+  description={project.data.description}
+>
+  {schema && (
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+
+  <article class="page-content project-page">
+    <header class="project-header">
+      <div class="project-title-row">
+        <h1>{project.data.name}</h1>
+        <StatusBadge status={project.data.status} />
+      </div>
+      <p class="project-tagline">{project.data.tagline}</p>
+    </header>
+
+    <div class="project-meta">
+      <div class="project-stack">
+        {project.data.stack.map(tech => (
+          <span class="tech-tag">{tech}</span>
+        ))}
+      </div>
+      {project.data.url !== '#' && (
+        <a href={project.data.url} class="project-link" rel="noopener noreferrer" target="_blank">
+          Visit {project.data.name} &rarr;
+        </a>
+      )}
+    </div>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

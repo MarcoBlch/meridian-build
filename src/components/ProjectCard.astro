@@ -1,0 +1,28 @@
+---
+import StatusBadge from './StatusBadge.astro';
+
+interface Props {
+  name: string;
+  tagline: string;
+  status: 'live' | 'beta' | 'building' | 'paused';
+  stack: string[];
+  slug: string;
+}
+
+const { name, tagline, status, stack, slug } = Astro.props;
+---
+
+<article class="project-card">
+  <a href={`/projects/${slug}`}>
+    <div class="project-card-header">
+      <h3>{name}</h3>
+      <StatusBadge status={status} />
+    </div>
+    <p class="project-card-tagline">{tagline}</p>
+    <div class="project-card-stack">
+      {stack.slice(0, 4).map(tech => (
+        <span class="tech-tag">{tech}</span>
+      ))}
+    </div>
+  </a>
+</article>

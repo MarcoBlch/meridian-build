@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter(p => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const allPosts = await getCollection('blog');
+const latestPosts = allPosts
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title="Home"
+  description="Meridian Build is an indie dev studio building digital products, one at a time. Founded by Marco."
+  wide
+>
+  <section class="hero">
+    <span class="hero-label">Indie Dev Studio</span>
+    <h1>Building digital products, one at a time</h1>
+    <p class="hero-intro">
+      Meridian Build is a solo operation run by Marco.
+      I design, build, and ship software products from first commit to paying customers.
+      Currently focused on AI, SaaS, and tools that solve real problems for real people.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <a href="/projects">View all &rarr;</a>
+    </div>
+    <div class="projects-grid">
+      {featuredProjects.map(project => (
+        <ProjectCard
+          name={project.data.name}
+          tagline={project.data.tagline}
+          status={project.data.status}
+          stack={project.data.stack}
+          slug={project.id.replace(/\.md$/, '')}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Latest from the Blog</h2>
+      <a href="/blog">Read all &rarr;</a>
+    </div>
+    <div class="posts-list">
+      {latestPosts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          slug={post.id.replace(/\.md$/, '')}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <h2>Follow the Journey</h2>
+    <p>I write about what I learn while building these products. Technical deep-dives, honest numbers, and lessons from shipping solo.</p>
+    <div class="cta-links">
+      <a href="/rss.xml">RSS Feed</a>
+      <a href="https://github.com/MarcoBlch" rel="noopener noreferrer" target="_blank">GitHub</a>
+      <a href="https://x.com/marcbernard_dev" rel="noopener noreferrer" target="_blank">X/Twitter</a>
+    </div>
+  </section>
+</BaseLayout>
