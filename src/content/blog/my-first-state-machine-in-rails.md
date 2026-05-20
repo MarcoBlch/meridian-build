@@ -2,7 +2,7 @@
 title: "My First State Machine in Rails"
 description: "How OutfitMaker's outfit suggestion flow evolved from nested if/else into a proper state machine. The gem, the gotchas, and why it clarified everything."
 pubDate: 2026-04-03
-tags: [rails, state-machines, architecture]
+tags: [rails, architecture]
 project: outfitmaker
 ---
 

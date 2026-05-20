@@ -2,7 +2,7 @@
 title: "Building in Public While Still Learning"
 description: "The tension between sharing your work and not feeling like an expert. How one Reddit post brought 40 users in 24 hours."
 pubDate: 2026-04-05
-tags: [indie-hacker, building-in-public, mindset]
+tags: [indie-hacker]
 ---
 
 I almost didn't post it.

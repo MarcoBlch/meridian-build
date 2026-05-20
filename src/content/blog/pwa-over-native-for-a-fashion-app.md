@@ -2,7 +2,7 @@
 title: "PWA Over Native for a Fashion App"
 description: "Why I chose a Progressive Web App over native iOS/Android for OutfitMaker. Camera access works, installation works, and I don't need Apple's permission."
 pubDate: 2026-04-18
-tags: [pwa, mobile, rails, architecture]
+tags: [rails, frontend, architecture]
 project: outfitmaker
 ---
 

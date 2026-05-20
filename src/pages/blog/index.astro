@@ -24,7 +24,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
     <nav class="tag-nav">
       <span class="tag-nav-label">Filter:</span>
       {allTags.map(tag => (
-        <a href={`/blog/tags/${tag}`} class="tag">{tag}</a>
+        <a href={`/blog/tags/${tag}/`} class="tag">{tag}</a>
       ))}
     </nav>
 

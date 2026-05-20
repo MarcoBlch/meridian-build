@@ -2,7 +2,7 @@
 title: "Why I Switched from RSpec to Minitest"
 description: "RSpec felt like too much ceremony for a solo project. Here's how I migrated 341 tests, what broke, and why simpler was better."
 pubDate: 2026-04-01
-tags: [rails, testing, minitest, rspec]
+tags: [rails, testing]
 project: outfitmaker
 ---
 

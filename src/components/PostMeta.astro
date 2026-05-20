@@ -32,7 +32,7 @@ const formattedUpdateDate = updatedDate?.toLocaleDateString('en-US', {
   <span>{readingTime} min read</span>
   <div class="post-meta-tags">
     {tags.map(tag => (
-      <a href={`/blog/tags/${tag}`} class="tag">{tag}</a>
+      <a href={`/blog/tags/${tag}/`} class="tag">{tag}</a>
     ))}
   </div>
 </div>

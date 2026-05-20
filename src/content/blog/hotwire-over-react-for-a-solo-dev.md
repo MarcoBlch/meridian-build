@@ -2,7 +2,7 @@
 title: "Hotwire Over React for a Solo Dev"
 description: "Real-time features without a JavaScript framework. How Turbo Streams and Stimulus gave OutfitMaker everything it needed with a fraction of the complexity."
 pubDate: 2026-04-11
-tags: [rails, hotwire, turbo, stimulus, frontend]
+tags: [rails, frontend]
 project: outfitmaker
 ---
 

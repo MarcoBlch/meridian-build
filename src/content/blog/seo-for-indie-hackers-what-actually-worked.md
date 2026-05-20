@@ -2,7 +2,7 @@
 title: "SEO for Indie Hackers: What Actually Worked"
 description: "Real data from 4 months of SEO effort on OutfitMaker. The strategies that moved the needle and the ones that wasted my time."
 pubDate: 2026-04-16
-tags: [seo, marketing, indie-hacker, growth]
+tags: [growth, indie-hacker]
 project: outfitmaker
 ---
 

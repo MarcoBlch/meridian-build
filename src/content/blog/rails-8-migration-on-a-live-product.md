@@ -2,7 +2,7 @@
 title: "Rails 8 Migration on a Live Product"
 description: "Upgrading from Rails 7.1.5 to 8.1 with paying users. The strategy, the gotchas, and why I fixed 103 test failures before touching the Gemfile."
 pubDate: 2026-04-14
-tags: [rails, upgrade, migration, testing]
+tags: [rails, architecture, testing]
 project: outfitmaker
 ---
 

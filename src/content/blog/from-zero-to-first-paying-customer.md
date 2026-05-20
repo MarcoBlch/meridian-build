@@ -2,7 +2,7 @@
 title: "From Zero to First Paying Customer"
 description: "First commit to first €7.99. The timeline, the numbers, what worked and what didn't on the path to revenue."
 pubDate: 2026-04-12
-tags: [indie-hacker, revenue, saas, building-in-public]
+tags: [indie-hacker, growth]
 project: outfitmaker
 ---
 

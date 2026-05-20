@@ -2,7 +2,7 @@
 title: "How I Got ChatGPT to Recommend My Product"
 description: "Traffic from chatgpt.com appeared in my analytics. Here's what GEO means for indie products, and the specific steps that worked."
 pubDate: 2026-04-07
-tags: [seo, geo, ai-search, marketing]
+tags: [growth]
 project: outfitmaker
 ---
 

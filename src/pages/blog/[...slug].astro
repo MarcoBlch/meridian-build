@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostMeta from '../../components/PostMeta.astro';
 import SchemaArticle from '../../components/SchemaArticle.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -57,9 +58,11 @@ const postUrl = new URL(`/blog/${slug}`, Astro.site).toString();
     {post.data.project && (
       <footer class="post-footer">
         <p>
-          This post is about <a href={`/projects/${post.data.project}`}>{post.data.project}</a>.
+          This post is about <a href={`/projects/${post.data.project}/`}>{post.data.project}</a>.
         </p>
       </footer>
     )}
+
+    <RelatedPosts currentSlug={slug} currentTags={post.data.tags} />
   </article>
 </BaseLayout>

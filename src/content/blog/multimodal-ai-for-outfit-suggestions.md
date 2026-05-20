@@ -2,7 +2,7 @@
 title: "Multimodal AI for Outfit Suggestions"
 description: "How sending actual photos to Gemini instead of text descriptions transformed OutfitMaker's suggestions from generic to genuinely useful."
 pubDate: 2026-04-09
-tags: [ai, gemini, multimodal, rails]
+tags: [rails, ai]
 project: outfitmaker
 ---
 

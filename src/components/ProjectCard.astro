@@ -13,7 +13,7 @@ const { name, tagline, status, stack, slug } = Astro.props;
 ---
 
 <article class="project-card">
-  <a href={`/projects/${slug}`}>
+  <a href={`/projects/${slug}/`}>
     <div class="project-card-header">
       <h3>{name}</h3>
       <StatusBadge status={status} />

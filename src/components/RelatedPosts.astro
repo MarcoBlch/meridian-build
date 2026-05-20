@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentSlug: string;
+  currentTags: string[];
+  limit?: number;
+}
+
+const { currentSlug, currentTags, limit = 3 } = Astro.props;
+
+const allPosts = await getCollection('blog');
+
+// Score each other post by shared-tag count; break ties by recency.
+const related = allPosts
+  .filter((p) => !p.data.draft && p.id.replace(/\.md$/, '') !== currentSlug)
+  .map((post) => {
+    const sharedTags = post.data.tags.filter((t) => currentTags.includes(t));
+    return { post, score: sharedTags.length };
+  })
+  .filter((entry) => entry.score > 0)
+  .sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return b.post.data.pubDate.valueOf() - a.post.data.pubDate.valueOf();
+  })
+  .slice(0, limit)
+  .map((entry) => entry.post);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+{related.length > 0 && (
+  <aside class="related-posts">
+    <h2>Related posts</h2>
+    <ul class="related-posts-list">
+      {related.map((post) => {
+        const slug = post.id.replace(/\.md$/, '');
+        return (
+          <li>
+            <a href={`/blog/${slug}/`}>
+              <span class="related-post-title">{post.data.title}</span>
+              <span class="related-post-meta">
+                <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </aside>
+)}
+
+<style>
+  .related-posts {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border, #e5e7eb);
+  }
+  .related-posts h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .related-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .related-posts-list a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .related-posts-list a:hover .related-post-title {
+    text-decoration: underline;
+  }
+  .related-post-title {
+    font-weight: 600;
+  }
+  .related-post-meta {
+    font-size: 0.875rem;
+    color: var(--color-muted, #6b7280);
+  }
+</style>
