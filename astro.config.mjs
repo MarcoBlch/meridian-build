@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // Tag pages with fewer than 2 posts are noindexed and excluded from the sitemap
 // to avoid thin-content signals. Update when a tag crosses the 2-post threshold.
-const THIN_TAGS = ['bugs'];
+const THIN_TAGS = [];
 
 export default defineConfig({
   site: 'https://meridianbuild.dev',
