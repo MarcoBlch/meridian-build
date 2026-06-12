@@ -17,10 +17,29 @@ const latestPosts = allPosts
 ---
 
 <BaseLayout
-  title="Home"
-  description="Meridian Build is an indie dev studio building digital products, one at a time. Founded by Marco."
+  title="Meridian Build — Indie Dev Studio | AI & SaaS Products"
+  rawTitle
+  description="Indie dev studio building AI and SaaS products with Ruby on Rails. Founded by Marco, a solo developer and indie hacker shipping products one at a time."
   wide
 >
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Meridian Build',
+      url: 'https://meridianbuild.dev',
+      description: 'Indie dev studio building digital products, one at a time.',
+      author: {
+        '@type': 'Person',
+        name: 'Marco',
+        url: 'https://meridianbuild.dev/about',
+        sameAs: ['https://github.com/MarcoBlch', 'https://x.com/MarcoBlch'],
+      },
+    })}
+  />
+
   <section class="hero">
     <span class="hero-label">Indie Dev Studio</span>
     <h1>Building digital products, one at a time</h1>
