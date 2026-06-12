@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import cloudflare from '@astrojs/cloudflare';
 
 // Tag pages with fewer than 2 posts are noindexed and excluded from the sitemap
 // to avoid thin-content signals. Update when a tag crosses the 2-post threshold.
@@ -19,4 +20,6 @@ export default defineConfig({
       theme: 'github-light',
     },
   },
+
+  adapter: cloudflare()
 });
