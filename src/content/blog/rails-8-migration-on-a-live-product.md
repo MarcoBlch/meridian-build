@@ -2,11 +2,11 @@
 title: "Rails 8 Migration on a Live Product"
 description: "Upgrading from Rails 7.1.5 to 8.1 with paying users. The strategy, the gotchas, and why I fixed 103 test failures before touching the Gemfile."
 pubDate: 2026-04-14
-tags: [rails, upgrade, migration, testing]
+tags: [rails, architecture, testing]
 project: outfitmaker
 ---
 
-OutfitMaker had been running Rails 7.1.5 since its first commit. For four months, I'd been adding features, fixing bugs, and accumulating technical debt without touching the framework version. Rails 8.0 came out. Then 8.1. The gap was widening.
+[OutfitMaker](https://outfitmaker.ai) had been running Rails 7.1.5 since its first commit. For four months, I'd been adding features, fixing bugs, and accumulating technical debt without touching the framework version. Rails 8.0 came out. Then 8.1. The gap was widening.
 
 I had paying users now (well, one). I couldn't afford a broken deploy. I also couldn't afford to fall further behind. Rails 8 brought real improvements I wanted (Solid Queue replacing Sidekiq, built-in authentication generator, better Turbo integration). The upgrade was overdue.
 
@@ -16,7 +16,7 @@ Here's how I did it without breaking anything.
 
 - Rails 7.1.5
 - Ruby 3.3.0
-- 341 tests (Minitest)
+- 341 tests ([Minitest](/blog/why-i-switched-from-rspec-to-minitest/))
 - 103 tests failing (yes, really)
 - PostgreSQL 16 with pgvector extension
 - Deployed on Railway
@@ -89,7 +89,7 @@ Three of these broke tests. Each time: fix the test (or the code), re-run, conti
 
 ## The pgvector gotcha
 
-This was the only real problem. OutfitMaker uses pgvector for clothing item embeddings (used for "find similar items" search). After upgrading, my migration that creates the vector column started failing:
+This was the only real problem. [The wardrobe app I'm building](https://outfitmaker.ai) uses pgvector for clothing item embeddings (used for "find similar items" search). After upgrading, my migration that creates the vector column started failing:
 
 ```
 PG::UndefinedObject: ERROR: type "vector" does not exist
@@ -130,7 +130,7 @@ Tests don't catch everything. I spent an hour manually testing:
 - PWA installation
 - Mobile layout
 
-Everything worked. One visual regression in the mobile menu (a CSS class name change in a Turbo Frame) that took 5 minutes to fix.
+Everything worked. One visual regression in the mobile menu (a CSS class name change in a [Turbo Frame](/blog/duplicate-turbo-frame-bug-broke-three-features/)) that took 5 minutes to fix.
 
 ## Step 7: Deploy
 

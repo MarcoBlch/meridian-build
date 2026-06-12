@@ -5,17 +5,23 @@ interface Props {
   pubDate: Date;
   updatedDate?: Date;
   url: string;
+  image: string;
+  wordCount: number;
+  section?: string;
 }
 
-const { title, description, pubDate, updatedDate, url } = Astro.props;
+const { title, description, pubDate, updatedDate, url, image, wordCount, section } = Astro.props;
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description: description,
+  image: image,
   datePublished: pubDate.toISOString(),
   dateModified: (updatedDate || pubDate).toISOString(),
+  wordCount: wordCount,
+  articleSection: section || 'Tech',
   url: url,
   author: {
     '@type': 'Person',
@@ -26,6 +32,10 @@ const schema = {
     '@type': 'Organization',
     name: 'Meridian Build',
     url: 'https://meridianbuild.dev',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://meridianbuild.dev/favicon.svg',
+    },
   },
 };
 ---

@@ -3,29 +3,38 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostCard from '../../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 
+const MIN_POSTS_PER_TAG = 2;
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   const publishedPosts = posts.filter(post => !post.data.draft);
   const allTags = [...new Set(publishedPosts.flatMap(post => post.data.tags))];
 
-  return allTags.map(tag => ({
-    params: { tag },
-    props: {
-      tag,
-      posts: publishedPosts
-        .filter(post => post.data.tags.includes(tag))
-        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
-    },
-  }));
+  return allTags.map(tag => {
+    const tagPosts = publishedPosts
+      .filter(post => post.data.tags.includes(tag))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+    return {
+      params: { tag },
+      props: {
+        tag,
+        posts: tagPosts,
+        thin: tagPosts.length < 2,
+      },
+    };
+  });
 }
 
-const { tag, posts } = Astro.props;
+const { tag, posts, thin } = Astro.props;
 ---
 
 <BaseLayout
   title={`Posts tagged "${tag}"`}
   description={`All blog posts tagged with "${tag}" on Meridian Build.`}
 >
+  {thin && <meta name="robots" content="noindex, follow" slot="head" />}
+
   <section class="page-content">
     <h1>Tagged: {tag}</h1>
     <p class="page-intro">

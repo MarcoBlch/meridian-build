@@ -12,7 +12,8 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 ---
 
 <BaseLayout
-  title="Blog"
+  title="Blog — Rails, AI & Indie Hacking | Meridian Build"
+  rawTitle
   description="Technical writing about Rails, AI, indie hacking, and building digital products as a solo developer."
 >
   <section class="page-content">
@@ -24,7 +25,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
     <nav class="tag-nav">
       <span class="tag-nav-label">Filter:</span>
       {allTags.map(tag => (
-        <a href={`/blog/tags/${tag}`} class="tag">{tag}</a>
+        <a href={`/blog/tags/${tag}/`} class="tag">{tag}</a>
       ))}
     </nav>
 

@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Uses — The Stack Behind Meridian Build"
+  rawTitle
+  description="The tools and stack I actually use to build and ship products like OutfitMaker: Ruby on Rails 8, Hotwire, PostgreSQL, Google Gemini, and Astro."
+>
+  <section class="page-content">
+    <h1>Uses</h1>
+    <p class="page-intro">
+      The tools I actually reach for, not the ones I think I should use. This is
+      the stack behind <a href="https://outfitmaker.ai">OutfitMaker</a> and
+      everything else I ship as a solo developer.
+    </p>
+
+    <div class="prose">
+      <h2>Backend</h2>
+      <ul>
+        <li><strong>Ruby 3.3 + Ruby on Rails 8.1.</strong> One framework, one
+          language, one mental model. I run the latest Rails on a live product
+          on purpose &mdash; here's <a href="/blog/rails-8-migration-on-a-live-product/">how
+          I did the Rails 8 migration with paying users</a> without downtime.</li>
+        <li><strong>PostgreSQL 16 with pgvector.</strong> The relational
+          database plus vector embeddings for "find similar items" search,
+          in the same Postgres instance.</li>
+        <li><strong>Sidekiq + Redis for background jobs</strong> (the AI calls
+          run async). Moving these to Solid Queue is next on my list, to drop
+          one infrastructure component.</li>
+        <li><strong>Devise</strong> for authentication and <strong>Stripe</strong>
+          for subscriptions.</li>
+      </ul>
+
+      <h2>Frontend</h2>
+      <ul>
+        <li><strong>Hotwire (Turbo + Stimulus).</strong> No SPA framework. Real-time
+          features with a fraction of the complexity &mdash; I wrote up
+          <a href="/blog/hotwire-over-react-for-a-solo-dev/">why I chose Hotwire
+          over React as a solo dev</a>.</li>
+        <li><strong>A PWA, not a native app.</strong> One codebase, installable on
+          mobile. The reasoning is in
+          <a href="/blog/pwa-over-native-for-a-fashion-app/">PWA over native for a
+          fashion app</a>.</li>
+        <li><strong>Hand-written CSS.</strong> No utility framework &mdash; just a
+          small design-token system.</li>
+      </ul>
+
+      <h2>AI</h2>
+      <ul>
+        <li><strong>Google Gemini, via Vertex AI.</strong> It powers the outfit
+          suggestions in <a href="https://outfitmaker.ai">the wardrobe app I'm
+          building</a>. I've written about
+          <a href="/blog/multimodal-ai-for-outfit-suggestions/">feeding it
+          multimodal input</a> and the
+          <a href="/blog/fashn-to-gemini-vertex-ai-cant-return-images/">surprise
+          that Vertex AI can't return images</a>.</li>
+      </ul>
+
+      <h2>Testing</h2>
+      <ul>
+        <li><strong>Minitest.</strong> I moved off RSpec &mdash; here's
+          <a href="/blog/why-i-switched-from-rspec-to-minitest/">why</a>.</li>
+      </ul>
+
+      <h2>Infrastructure &amp; this site</h2>
+      <ul>
+        <li><strong>Railway</strong> for hosting and deploys (push to git, rolling
+          deploys, zero downtime).</li>
+        <li><strong>This blog runs on Astro</strong> with hand-written CSS,
+          deployed as a static site.</li>
+      </ul>
+
+      <p>
+        Want to see what I build with all of this? Browse
+        <a href="/projects/">the projects</a> or read
+        <a href="/blog/">the blog</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

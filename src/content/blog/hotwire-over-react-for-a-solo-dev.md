@@ -2,11 +2,11 @@
 title: "Hotwire Over React for a Solo Dev"
 description: "Real-time features without a JavaScript framework. How Turbo Streams and Stimulus gave OutfitMaker everything it needed with a fraction of the complexity."
 pubDate: 2026-04-11
-tags: [rails, hotwire, turbo, stimulus, frontend]
+tags: [rails, frontend]
 project: outfitmaker
 ---
 
-When I started OutfitMaker, the question wasn't "should I use React?" It was "how do I build real-time features?" Outfit suggestions stream in from an AI that takes 3-5 seconds to respond. Product recommendations update when you add new clothing. Wardrobe stats recalculate on the fly. The app needs to feel alive.
+When I started [OutfitMaker](https://outfitmaker.ai), the question wasn't "should I use React?" It was "how do I build real-time features?" Outfit suggestions stream in from an AI that takes 3-5 seconds to respond. Product recommendations update when you add new clothing. Wardrobe stats recalculate on the fly. The app needs to feel alive.
 
 The standard 2024 answer would be: Rails API + React SPA. Separate frontend. State management library. Build tooling. Two deployment targets. One developer.
 
@@ -99,9 +99,9 @@ Eight lines of JavaScript. The Turbo Stream broadcast automatically replaces the
 
 ## What this means for bundle size
 
-OutfitMaker's total JavaScript: 47KB gzipped. That includes Turbo, Stimulus, and all my controllers.
+[OutfitMaker's](https://outfitmaker.ai) total JavaScript: 47KB gzipped. That includes Turbo, Stimulus, and all my controllers.
 
-A comparable React app with routing, state management, and a UI library? 150-300KB minimum. For a fashion app where first-load performance directly impacts whether someone installs the PWA, this matters.
+A comparable React app with routing, state management, and a UI library? 150-300KB minimum. For a fashion app where first-load performance directly impacts whether someone [installs the PWA](/blog/pwa-over-native-for-a-fashion-app/), this matters.
 
 ## The product recommendations case
 

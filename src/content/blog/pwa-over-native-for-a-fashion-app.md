@@ -2,7 +2,7 @@
 title: "PWA Over Native for a Fashion App"
 description: "Why I chose a Progressive Web App over native iOS/Android for OutfitMaker. Camera access works, installation works, and I don't need Apple's permission."
 pubDate: 2026-04-18
-tags: [pwa, mobile, rails, architecture]
+tags: [rails, frontend, architecture]
 project: outfitmaker
 ---
 
@@ -16,7 +16,7 @@ I ignored all of that and built a Progressive Web App. Here's why, and what happ
 
 Let me be precise about what works in a PWA in 2026, because the capabilities have grown significantly since the early days:
 
-**Camera access**: Full camera API via `getUserMedia` and the File input with `capture` attribute. Both work reliably on iOS Safari and Chrome Android. OutfitMaker users photograph their clothes directly in the browser. No native code needed.
+**Camera access**: Full camera API via `getUserMedia` and the File input with `capture` attribute. Both work reliably on iOS Safari and Chrome Android. [OutfitMaker](https://outfitmaker.ai) users photograph their clothes directly in the browser. No native code needed.
 
 **Home screen installation**: Users can "Add to Home Screen" on both iOS and Android. The app launches fullscreen, with your icon, splash screen, and no browser chrome. It looks and feels like a native app.
 
@@ -26,7 +26,7 @@ Let me be precise about what works in a PWA in 2026, because the capabilities ha
 
 **Responsive layout**: CSS handles the rest. The same codebase serves desktop and mobile with layout adjustments.
 
-What a user experiences: they visit outfitmaker.ai on their phone, get prompted to install, tap "Add to Home Screen," and from that point on they have an app icon that launches a fullscreen experience with camera access. The friction is slightly higher than an App Store download (no one-tap install), but the delta is smaller than you'd think.
+What a user experiences: they visit [outfitmaker.ai](https://outfitmaker.ai) on their phone, get prompted to install, tap "Add to Home Screen," and from that point on they have an app icon that launches a fullscreen experience with camera access. The friction is slightly higher than an App Store download (no one-tap install), but the delta is smaller than you'd think.
 
 ## Why I didn't go native
 
@@ -139,7 +139,7 @@ self.addEventListener('fetch', event => {
     data: { action: "change->upload#preview" } %>
 ```
 
-That's it. The `capture` attribute opens the camera on mobile. The Stimulus controller handles the preview. The server handles the upload. No native bridges, no platform-specific code.
+That's it. The `capture` attribute opens the camera on mobile. The [Stimulus controller](/blog/hotwire-over-react-for-a-solo-dev/) handles the preview. The server handles the upload. No native bridges, no platform-specific code.
 
 ## The numbers
 

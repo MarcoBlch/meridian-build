@@ -2,13 +2,13 @@
 title: "Why I Switched from RSpec to Minitest"
 description: "RSpec felt like too much ceremony for a solo project. Here's how I migrated 341 tests, what broke, and why simpler was better."
 pubDate: 2026-04-01
-tags: [rails, testing, minitest, rspec]
+tags: [rails, testing]
 project: outfitmaker
 ---
 
 I loved RSpec. The DSL reads like English, the matchers are expressive, the community is enormous. For three years, every Rails project I touched used RSpec. It was the obvious choice.
 
-Then I spent a Saturday afternoon writing a test for a simple service object in OutfitMaker, something that takes a user's wardrobe and filters it by season. The test file ended up at 87 lines. The implementation was 23 lines. Something felt wrong.
+Then I spent a Saturday afternoon writing a test for a simple service object in [OutfitMaker](https://outfitmaker.ai), something that takes a user's wardrobe and filters it by season. The test file ended up at 87 lines. The implementation was 23 lines. Something felt wrong.
 
 ## The ceremony problem
 
@@ -86,7 +86,7 @@ I didn't use any automated tool. I did it manually over four days, about 80 test
 3. Then controllers
 4. System tests last
 
-Day one: 103 failures before I'd even started converting. These were pre-existing failures I'd been ignoring because RSpec's output made them easy to scroll past. Minitest's stark `F` characters were harder to ignore. I fixed those first.
+Day one: [103 failures](/blog/rails-8-migration-on-a-live-product/) before I'd even started converting. These were pre-existing failures I'd been ignoring because RSpec's output made them easy to scroll past. Minitest's stark `F` characters were harder to ignore. I fixed those first.
 
 The actual conversion was mechanical. `describe` becomes a class. `it` becomes `test`. `let` becomes instance variables in `setup`. `expect(x).to eq(y)` becomes `assert_equal y, x` (note the argument order swap, which tripped me up for the first 50 tests).
 

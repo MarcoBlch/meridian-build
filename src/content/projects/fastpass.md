@@ -3,7 +3,7 @@ name: "FastPass.email"
 tagline: "Pay-to-reach escrow messaging"
 description: "An escrow-based messaging platform where senders pay a small fee to reach busy professionals. Anti-spam through economics, not filters."
 url: "https://fastpass.email"
-status: "building"
+status: "beta"
 stack: ["Supabase", "React", "TypeScript", "Stripe Connect", "Postmark"]
 featured: true
 order: 2

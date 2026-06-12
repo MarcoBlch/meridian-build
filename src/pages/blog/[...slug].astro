@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostMeta from '../../components/PostMeta.astro';
 import SchemaArticle from '../../components/SchemaArticle.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -22,13 +23,19 @@ const wordCount = post.body?.split(/\s+/).length ?? 0;
 const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
 const slug = post.id.replace(/\.md$/, '');
-const postUrl = new URL(`/blog/${slug}`, Astro.site).toString();
+const postUrl = new URL(`/blog/${slug}/`, Astro.site).toString();
+const ogImagePath = `/og/${slug}.png`;
+const ogImageURL = new URL(ogImagePath, Astro.site).toString();
 ---
 
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
+  ogImage={ogImagePath}
   article={true}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
 >
   <SchemaArticle
     slot="head"
@@ -37,6 +44,9 @@ const postUrl = new URL(`/blog/${slug}`, Astro.site).toString();
     pubDate={post.data.pubDate}
     updatedDate={post.data.updatedDate}
     url={postUrl}
+    image={ogImageURL}
+    wordCount={wordCount}
+    section={post.data.tags?.[0]}
   />
 
   <article class="page-content blog-post">
@@ -57,9 +67,11 @@ const postUrl = new URL(`/blog/${slug}`, Astro.site).toString();
     {post.data.project && (
       <footer class="post-footer">
         <p>
-          This post is about <a href={`/projects/${post.data.project}`}>{post.data.project}</a>.
+          This post is about <a href={`/projects/${post.data.project}/`}>{post.data.project}</a>.
         </p>
       </footer>
     )}
+
+    <RelatedPosts currentSlug={slug} currentTags={post.data.tags} />
   </article>
 </BaseLayout>
