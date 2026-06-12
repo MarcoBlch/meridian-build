@@ -3,10 +3,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="About"
-  description="About Marco and Meridian Build, an indie dev studio building digital products."
+  title="About Marco — Indie Developer Building AI SaaS | Meridian Build"
+  rawTitle
+  description="About Marco and Meridian Build, an indie dev studio building AI-powered SaaS products with Ruby on Rails."
   wide
 >
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Marco',
+      url: 'https://meridianbuild.dev/about',
+      jobTitle: 'Indie Developer',
+      description: 'Solo developer building AI-powered SaaS products.',
+      sameAs: ['https://github.com/MarcoBlch', 'https://x.com/MarcoBlch'],
+      worksFor: {
+        '@type': 'Organization',
+        name: 'Meridian Build',
+        url: 'https://meridianbuild.dev',
+      },
+    })}
+  />
+
   <div class="about-hero">
     <div>
       <h1>About Meridian Build</h1>
