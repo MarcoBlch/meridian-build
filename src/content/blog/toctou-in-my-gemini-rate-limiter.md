@@ -6,7 +6,7 @@ tags: [rails, ai, bugs]
 project: outfitmaker
 ---
 
-[OutfitMaker](https://outfitmaker.ai)'s free tier gives users one AI outfit suggestion per day. Premium gets ten. Pro is unlimited. The math is simple: open the cache, read the count, compare to the user's limit, refuse if they're over.
+[OutfitMaker](https://outfitmaker.ai)'s free tier gives users one [AI outfit suggestion](/blog/multimodal-ai-for-outfit-suggestions/) per day. Premium gets ten. Pro is unlimited. The math is simple: open the cache, read the count, compare to the user's limit, refuse if they're over.
 
 That's also exactly how I wrote it. And exactly why it didn't work.
 

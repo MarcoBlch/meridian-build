@@ -23,7 +23,7 @@ The application layout has this near the bottom:
 <%= turbo_frame_tag "modal" %>
 ```
 
-An empty placeholder. Modals render into it via Turbo Frame requests. Standard Hotwire.
+An empty placeholder. Modals render into it via Turbo Frame requests. [Standard Hotwire](/blog/hotwire-over-react-for-a-solo-dev/).
 
 The wardrobe item views start like this:
 
