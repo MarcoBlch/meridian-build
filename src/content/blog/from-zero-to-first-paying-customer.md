@@ -6,7 +6,7 @@ tags: [indie-hacker, growth]
 project: outfitmaker
 ---
 
-On March 14th, 2026, someone in Lisbon paid €7.99 for a Premium subscription to OutfitMaker.ai. I was in bed, half-asleep, when the Stripe notification lit up my phone. I stared at it for a full minute, convinced it was a test transaction I'd forgotten about.
+On March 14th, 2026, someone in Lisbon paid €7.99 for a Premium subscription to [OutfitMaker.ai](https://outfitmaker.ai). I was in bed, half-asleep, when the Stripe notification lit up my phone. I stared at it for a full minute, convinced it was a test transaction I'd forgotten about.
 
 It wasn't. Someone I'd never met, in a country I'd never been to, decided my product was worth paying for. After four months of building, three of those with the app live and free, the number in Stripe was no longer €0.00.
 
@@ -20,9 +20,9 @@ This is the story of that journey. Not a growth playbook; the numbers are too sm
 
 **January 2026**: Launched on a free hosting tier. Shared on r/rails. Got 40 users in 24 hours (the Reddit post). Most signed up, uploaded 2-3 items, and never came back. Retention was terrible.
 
-**February 2026**: Shipped multimodal AI (actual photos to Gemini), PWA support, and a proper onboarding flow. Quality improved dramatically. Started seeing users come back daily.
+**February 2026**: Shipped [multimodal AI](/blog/multimodal-ai-for-outfit-suggestions/) (actual photos to Gemini), [PWA support](/blog/pwa-over-native-for-a-fashion-app/), and a proper onboarding flow. Quality improved dramatically. Started seeing users come back daily.
 
-**March 2026**: Added multilingual support (5 languages), Premium tier with Stripe, and started writing SEO content seriously. Paid directories, comparison articles, how-to guides.
+**March 2026**: Added multilingual support (5 languages), Premium tier with Stripe, and started [writing SEO content](/blog/seo-for-indie-hackers-what-actually-worked/) seriously. Paid directories, comparison articles, how-to guides.
 
 **March 14, 2026**: First paying customer.
 
@@ -57,13 +57,13 @@ My free tier isn't a crippled demo. Users get real wardrobe management, real AI 
 
 ### GEO / AI referrals
 
-15-25 visits per week from ChatGPT, Copilot, and Perplexity. Small numbers, but with a 12% conversion rate to signups. These users arrive with high intent; they've already described their need to an AI, and the AI sent them to me.
+15-25 visits per week from [ChatGPT, Copilot, and Perplexity](/blog/how-i-got-chatgpt-to-recommend-my-product/). Small numbers, but with a 12% conversion rate to signups. These users arrive with high intent; they've already described their need to an AI, and the AI sent them to me.
 
 ## What didn't work
 
 ### Paid directories
 
-I submitted OutfitMaker to 15+ product directories (Product Hunt alternatives, SaaS directories, AI tool aggregators). Total traffic from all of them combined: 7 visits. Cost: 3 hours of submission work plus $49 for "featured" placement on one directory.
+I submitted [OutfitMaker](https://outfitmaker.ai) to 15+ product directories (Product Hunt alternatives, SaaS directories, AI tool aggregators). Total traffic from all of them combined: 7 visits. Cost: 3 hours of submission work plus $49 for "featured" placement on one directory.
 
 Return on investment: essentially zero. These directories have tiny audiences and the traffic they send doesn't convert. I'd have been better off spending those 3 hours writing one blog post.
 
@@ -85,7 +85,7 @@ At this scale, paid acquisition doesn't make mathematical sense. My product cost
 
 **Focus on one acquisition channel.** I scattered effort across Reddit, Twitter, SEO, directories, and ads. Reddit worked. Everything else was noise at this stage. I should have doubled down on what worked (community engagement, technical content) and ignored the rest until I had more users to learn from.
 
-**Build in public from day one.** My first Reddit post was at month three. If I'd been sharing from the start (weekly updates, technical learnings, honest numbers), I'd have built an audience alongside the product. The two compound each other.
+**[Build in public](/blog/building-in-public-while-still-learning/) from day one.** My first Reddit post was at month three. If I'd been sharing from the start (weekly updates, technical learnings, honest numbers), I'd have built an audience alongside the product. The two compound each other.
 
 ## What one paying customer means
 

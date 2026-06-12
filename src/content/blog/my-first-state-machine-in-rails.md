@@ -6,7 +6,7 @@ tags: [rails, architecture]
 project: outfitmaker
 ---
 
-Three months into building OutfitMaker, my outfit suggestion code looked like this:
+Three months into building [OutfitMaker](https://outfitmaker.ai), my outfit suggestion code looked like this:
 
 ```ruby
 def generate_suggestion(user)
@@ -34,7 +34,7 @@ def generate_suggestion(user)
 end
 ```
 
-Boolean flags. Rescue blocks. Early returns scattered like landmines. The method worked, but every time I needed to add a feature (retry logic, timeout handling, rate limiting), I had to trace through the entire control flow to figure out which state the suggestion was in.
+Boolean flags. Rescue blocks. Early returns scattered like landmines. The method worked, but every time I needed to add a feature (retry logic, timeout handling, [rate limiting](/blog/toctou-in-my-gemini-rate-limiter/)), I had to trace through the entire control flow to figure out which state the suggestion was in.
 
 ## The turning point
 
@@ -92,7 +92,7 @@ The state diagram was now explicit. `pending → generating → completed` or `p
 
 **Guard rails.** Try calling `suggestion.complete!` when it's in `pending` state? AASM raises `InvalidTransition`. The model literally cannot enter an illegal state. No more "generating is true but last_error is also set" contradictions.
 
-**Callbacks on transitions.** The `after` blocks on each event replaced scattered callback logic. When a suggestion completes, it broadcasts via Turbo Stream. When it fails, it records the error. The logic lives where the state change happens, not in some distant service object.
+**Callbacks on transitions.** The `after` blocks on each event replaced scattered callback logic. When a suggestion completes, it [broadcasts via Turbo Stream](/blog/hotwire-over-react-for-a-solo-dev/). When it fails, it records the error. The logic lives where the state change happens, not in some distant service object.
 
 **Database-backed.** The `status` column is a string. I can query `Suggestion.where(status: :generating)` to find stuck suggestions. I can add a cron job that fails any suggestion stuck in `generating` for more than 5 minutes, and timeout handling became a three-line method.
 

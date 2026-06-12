@@ -17,7 +17,7 @@ So I wrote a post: "I built an AI wardrobe app with Rails 8 + Hotwire. Here's wh
 
 Within an hour: 5 upvotes, 2 comments asking about the AI integration. Within six hours: 12 upvotes, a detailed comment from someone who'd built something similar and had suggestions about my image processing pipeline. Within 24 hours: 29 upvotes, 12,000 views, and 40 new user signups.
 
-Forty users. From one Reddit post. I'd spent three weeks before that trying to get traffic through SEO articles that generated maybe 2 clicks per day. One authentic post about what I'd built and learned did more in a day than all that content marketing combined.
+Forty users. From one Reddit post. I'd spent three weeks before that trying to get traffic through [SEO articles](/blog/seo-for-indie-hackers-what-actually-worked/) that generated maybe 2 clicks per day. One authentic post about what I'd built and learned did more in a day than all that content marketing combined.
 
 ## The tension
 
@@ -29,13 +29,13 @@ I've read the advice: "Share your journey, not your expertise." "People connect 
 
 ## What I've learned about sharing
 
-**People respond to specifics, not generalities.** "I built an app" gets ignored. "I built an AI wardrobe app that uses Gemini's multimodal API to analyze fabric texture, and here's the prompt that worked after twelve iterations" gets engagement. The more specific and technical you are, the more useful the post is, and the less it feels like self-promotion.
+**People respond to specifics, not generalities.** "I built an app" gets ignored. "I built an AI wardrobe app that uses Gemini's [multimodal API](/blog/multimodal-ai-for-outfit-suggestions/) to analyze fabric texture, and here's the prompt that worked after twelve iterations" gets engagement. The more specific and technical you are, the more useful the post is, and the less it feels like self-promotion.
 
 **Honesty about failures outperforms polished success stories.** My most-engaged posts aren't about features I shipped. They're about bugs that took me three days to find, architectural decisions I reversed, and marketing strategies that completely flopped. People are drowning in "10x your growth" content. They're hungry for "here's what actually happened."
 
 **Timing matters less than you think.** I agonized over whether my project was "ready" to share. It wasn't. It never would be. The r/rails post happened when the app was frankly embarrassing: no onboarding flow, broken mobile layout, placeholder copy everywhere. Nobody cared. They cared about the technical decisions and the honest reflection.
 
-**The feedback loop is real.** Those 40 users from Reddit didn't just validate the product; they validated the direction. Three of them sent detailed feature requests. One found a critical bug in my image processing that I'd missed for weeks. Another suggested the PWA approach that I ended up implementing. Building in public isn't just marketing; it's free product management.
+**The feedback loop is real.** Those 40 users from Reddit didn't just validate the product; they validated the direction. Three of them sent detailed feature requests. One found a critical bug in my image processing that I'd missed for weeks. Another suggested the [PWA approach](/blog/pwa-over-native-for-a-fashion-app/) that I ended up implementing. Building in public isn't just marketing; it's free product management.
 
 ## The uncomfortable part
 
@@ -53,7 +53,7 @@ I don't have a content calendar. I don't schedule posts. I don't optimize for en
 
 ## The compounding effect
 
-Six months of building in public has produced something I didn't expect: a body of work that speaks for itself. When I reach out to potential collaborators, I can point to months of consistent, honest documentation of my process. When users find OutfitMaker through a blog post, they arrive with context about who built it and why. When I'm stuck on a problem, I can reference my own earlier posts to see how I solved similar issues.
+Six months of building in public has produced something I didn't expect: a body of work that speaks for itself. When I reach out to potential collaborators, I can point to months of consistent, honest documentation of my process. When users find [OutfitMaker](https://outfitmaker.ai) through a blog post, they arrive with context about who built it and why. When I'm stuck on a problem, I can reference my own earlier posts to see how I solved similar issues.
 
 This isn't a "10x growth hack." My blog gets maybe 200 readers per post. My Twitter has 340 followers. These aren't impressive numbers by any metric. But they're real people who know what I'm building, why I'm building it, and what I've learned along the way. That's worth more than 10,000 followers who've never read past a headline.
 

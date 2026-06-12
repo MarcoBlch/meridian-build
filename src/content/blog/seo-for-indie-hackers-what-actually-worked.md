@@ -6,7 +6,7 @@ tags: [growth, indie-hacker]
 project: outfitmaker
 ---
 
-I'll spare you the theory. Every indie hacker blog regurgitates the same SEO advice: "write quality content," "target long-tail keywords," "build backlinks." Here's what actually happened when I tried to get OutfitMaker visible on Google.
+I'll spare you the theory. Every indie hacker blog regurgitates the same SEO advice: "write quality content," "target long-tail keywords," "build backlinks." Here's what actually happened when I tried to get [OutfitMaker](https://outfitmaker.ai) visible on Google.
 
 ## The starting point
 
@@ -104,7 +104,7 @@ What would move me to page 1:
 - More content depth (becoming the definitive resource on the topic)
 - Time (newer domains inherently rank lower; this resolves over 12-18 months)
 
-I'm not going to shortcut this. No PBNs, no link farms, no grey-hat tactics. The domain will age, the content will accumulate, and the rankings will improve. Or they won't, and I'll find other channels. SEO is a long game for solo developers.
+I'm not going to shortcut this. No PBNs, no link farms, no grey-hat tactics. The domain will age, the content will accumulate, and the rankings will improve. Or they won't, and I'll find [other channels](/blog/how-i-got-chatgpt-to-recommend-my-product/). SEO is a long game for solo developers.
 
 ## The content production system
 
@@ -113,7 +113,7 @@ I publish 2-3 articles per week. Here's the system:
 1. **Monday**: Check Google Search Console for queries where OutfitMaker appears but doesn't rank well. These are content opportunities.
 2. **Tuesday-Wednesday**: Write one article targeting a gap.
 3. **Thursday**: Write one article in a non-English language (translation + localization of a previous English article).
-4. **Friday**: Technical blog post about something I built that week (this goes on the Meridian Build blog, linking back to OutfitMaker).
+4. **Friday**: Technical blog post about something I built that week (this goes on the Meridian Build blog, linking back to [OutfitMaker.ai](https://outfitmaker.ai)).
 
 Total time: about 5-6 hours/week on content. It's a significant investment for a solo developer. But organic traffic is free traffic, and free traffic is the only traffic I can afford.
 

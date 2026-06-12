@@ -8,7 +8,7 @@ project: outfitmaker
 
 I was checking my Plausible analytics on a Tuesday morning when I noticed something strange. Two referral visits from `chatgpt.com`. Then three more from `copilot.microsoft.com`. A week later, the trickle became consistent: 5-10 visits per week from AI chat interfaces.
 
-Someone was asking ChatGPT for wardrobe management apps, and it was recommending OutfitMaker.ai.
+Someone was asking ChatGPT for wardrobe management apps, and it was recommending [OutfitMaker.ai](https://outfitmaker.ai).
 
 I hadn't done anything deliberate to make this happen. But once I saw it, I wanted to understand why, and how to get more of it.
 
@@ -16,7 +16,7 @@ I hadn't done anything deliberate to make this happen. But once I saw it, I want
 
 Generative Engine Optimization. It's SEO's younger sibling. Instead of optimizing for Google's crawlers and ranking algorithms, you're optimizing for the LLMs that power ChatGPT, Copilot, Perplexity, and Claude.
 
-The key difference: traditional SEO is about ranking on a results page. GEO is about being included in a generated answer. There's no "position 1"; either the AI mentions you or it doesn't. And the factors that make an AI mention you are different from the factors that make Google rank you.
+The key difference: [traditional SEO](/blog/seo-for-indie-hackers-what-actually-worked/) is about ranking on a results page. GEO is about being included in a generated answer. There's no "position 1"; either the AI mentions you or it doesn't. And the factors that make an AI mention you are different from the factors that make Google rank you.
 
 ## What I found in my data
 
@@ -153,6 +153,6 @@ The absolute numbers are small. But for a solo developer with zero ad budget, ge
 
 ## What this means for indie products
 
-GEO is the great equalizer. Google's algorithm favors established sites with high domain authority. AI recommendations favor accurate, specific, useful information regardless of who publishes it. A solo developer with a genuine product and clear documentation can compete with VC-funded companies for AI recommendations.
+GEO is the great equalizer. Google's algorithm favors established sites with high domain authority. AI recommendations favor accurate, specific, useful information regardless of who publishes it. A solo developer with a [genuine product](https://outfitmaker.ai) and clear documentation can compete with VC-funded companies for AI recommendations.
 
 The barrier to entry is low: create an `llms.txt`, add proper schema markup, allow AI crawlers, write content that answers real questions, and be present in authentic discussions across the web. It's not a growth hack. It's just being visible and useful in the places where AI systems learn about the world.

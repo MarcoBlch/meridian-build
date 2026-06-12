@@ -6,7 +6,7 @@ tags: [rails, ai]
 project: outfitmaker
 ---
 
-For the first two months of OutfitMaker, the AI only read text. Each clothing item had attributes (color, category, season, occasion) and I'd send those to Gemini as a structured prompt. "The user has a navy blazer, white Oxford shirt, khaki chinos, and brown leather shoes. Suggest an outfit for a casual Friday at the office."
+For the first two months of [OutfitMaker](https://outfitmaker.ai), the AI only read text. Each clothing item had attributes (color, category, season, occasion) and I'd send those to [Gemini](/blog/fashn-to-gemini-vertex-ai-cant-return-images/) as a structured prompt. "The user has a navy blazer, white Oxford shirt, khaki chinos, and brown leather shoes. Suggest an outfit for a casual Friday at the office."
 
 The suggestions were correct but lifeless. Like asking someone who's only read the Wikipedia page for "fashion" to dress you. Technically accurate. Completely lacking in taste.
 
@@ -173,4 +173,4 @@ With Redis caching and selective image sending:
 
 At 47 users generating roughly 1 suggestion per day, the economics work. At 10,000 users, I'd need to optimize further, perhaps generating lower-resolution thumbnails specifically for AI consumption, or implementing a tiered system where free users get text-only suggestions and premium users get multimodal ones.
 
-For now, the multimodal approach is the single biggest quality improvement I've shipped. It took OutfitMaker from a novelty ("look, AI picks your clothes") to something genuinely useful: an AI that actually understands what's in your closet.
+For now, the multimodal approach is the single biggest quality improvement I've shipped. It took [the outfit-suggestion app](https://outfitmaker.ai) from a novelty ("look, AI picks your clothes") to something genuinely useful: an AI that actually understands what's in your closet.
