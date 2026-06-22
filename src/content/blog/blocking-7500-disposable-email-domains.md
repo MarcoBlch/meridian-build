@@ -129,11 +129,11 @@ I'm not going to dress this up with a percentage. The counts are small — this 
 
 ## The takeaway
 
-Spam signups are sneakier than they look because they don't break anything. The app works, the rows are valid, the dashboard fills in. What they break is your ability to trust the one ratio you actually steer by. I'd just spent real effort earning a conversion rate I believed; a pile of throwaway accounts could have quietly un-earned it.
+For a solo founder, your metrics aren't a dashboard — they're your steering wheel. You don't have a growth team running experiments; you have a handful of numbers and the decisions you make because of them. Which means **data hygiene is a growth discipline, not a chore.** A signup table full of throwaway accounts doesn't just look untidy; it sends you off to fix a checkout that was never broken while the real lever sits untouched. The cleanup *is* the growth work, because it's what lets the next decision be the right one.
 
 Two things I'd tell my past self:
 
 1. **Match the fix to the vector.** The spam came through one path, as one class of address. A 7,500-line blocklist and an O(1) `Set` lookup beat a captcha that taxes every honest user — because it makes the *spammer's* choice fail, not the real user's patience.
 2. **Add new validations with `on: :create`.** A rule you invent today shouldn't retroactively trap the users who signed up yesterday. Lock the door going forward; don't brick the people already inside.
 
-The quiet failures are the expensive ones, and a metric that lies *upward* is the quietest of all.
+I spent two PRs earning a conversion rate I could believe. Defending it from junk that pads the denominator turned out to be the same job, just from the other end — and a number you can defend is worth a lot more than one you merely collected.
