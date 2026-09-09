@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostMeta from '../../components/PostMeta.astro';
 import SchemaArticle from '../../components/SchemaArticle.astro';
+import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getCollection, render } from 'astro:content';
 
@@ -48,6 +49,8 @@ const ogImageURL = new URL(ogImagePath, Astro.site).toString();
     wordCount={wordCount}
     section={post.data.tags?.[0]}
   />
+
+  <SchemaBreadcrumb slot="head" title={post.data.title} url={postUrl} />
 
   <article class="page-content blog-post">
     <header class="post-header">
