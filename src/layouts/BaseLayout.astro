@@ -73,6 +73,9 @@ const authorURL = new URL('/about', Astro.site).toString();
     <meta name="twitter:image" content={ogImageURL} />
 
     <slot name="head" />
+
+    <!-- Cloudflare Web Analytics -->
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "700361260b0846acbacbc26ffb08bcbd"}'></script>
   </head>
   <body>
     <Header />
