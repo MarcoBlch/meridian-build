@@ -55,7 +55,7 @@ Accessory limits for casual contexts went from 1 to 3, and the prompt gained an 
 
 A Swedish user who had uploaded 28 items and then left told me the cutout photos of her clothes "looked quite weird and parts of the pieces just disappeared. I think it would be better to just take the pictures and not cut it out."
 
-The app runs every wardrobe photo through background removal (rembg / U2Net). It's great on jackets and jeans. It *eats* thin straps, lace, and low-contrast fabrics. And here's the design flaw: a mutilated cutout was still attached and displayed proudly, because no code ever asked "did the cutout actually keep the garment?"
+The app runs every wardrobe photo through [background removal (rembg / U2Net)](/blog/four-memory-defenses-against-a-sidekiq-oom/). It's great on jackets and jeans. It *eats* thin straps, lace, and low-contrast fabrics. And here's the design flaw: a mutilated cutout was still attached and displayed proudly, because no code ever asked "did the cutout actually keep the garment?"
 
 She handed me the fix in her own words: when the cutout is bad, the original photo wins. Every view already had a fallback to the original when no cutout exists, so the entire fix (PR #158, `fix/cutout-quality-gate`) is refusing to attach bad cutouts:
 

@@ -104,7 +104,7 @@ Each of these was an assumption before March 14th. Now they're validated. Not at
 ## What's next
 
 The path from 1 to 10 paying customers is probably different from the path from 0 to 1. I need:
-- Better retention (more reasons to open the app daily)
+- [Better retention](/blog/emailed-312-users-three-fixes-48-hours/) (more reasons to open the app daily)
 - More users at the top of the funnel (SEO is the long game)
 - A sharper free-to-paid conversion trigger
 - Social proof (testimonials, case studies)

@@ -162,7 +162,7 @@ The guard clause `return unless suggestion.generating?` handles duplicate job ex
 
 ## When state machines are overkill
 
-Not everything needs a state machine. My `ClothingItem` model has a `processing` boolean for background removal; it's either processing or it's not. Two states, one transition, no complex lifecycle. A boolean is fine there.
+Not everything needs a state machine. My `ClothingItem` model has a `processing` boolean for [background removal](/blog/four-memory-defenses-against-a-sidekiq-oom/); it's either processing or it's not. Two states, one transition, no complex lifecycle. A boolean is fine there.
 
 The signal that you need a state machine:
 

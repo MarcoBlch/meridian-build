@@ -75,13 +75,13 @@ One word in a Dockerfile. Weeks of a flagship feature quietly running at a fract
 
 The one-line fix is not the interesting part. Three things are.
 
-**Silent degradation is worse than a crash.** A crash gets a Sentry alert, a red graph, a bug report. This got none of that, because from the outside the feature "worked" — it returned outfits. The failure was in *quality*, which no exception tracker measures. If I'd had a single assertion that treated `0/25 items with images` as an error condition instead of an info log, I'd have known in minutes, not weeks. Degraded-but-successful is the hardest failure mode to see, and it's exactly the one AI features love to hit.
+**Silent degradation is worse than a crash.** A crash gets a Sentry alert, a red graph, a bug report. This got none of that, because from the outside the feature "worked": it returned outfits. The failure was in *quality*, which no exception tracker measures. If I'd had a single assertion that treated `0/25 items with images` as an error condition instead of an info log, I'd have known in minutes, not weeks. Degraded-but-successful is the hardest failure mode to see, and it's [exactly the one AI features love to hit](/blog/llm-in-a-kids-app-pre-generated-dialogue/).
 
 **Shell-out dependencies need a home in your health checks.** A gem that wraps a system binary is a dependency your language tooling can't verify. The honest fix isn't just "add the package" — it's making the runtime prove it has what it needs. A boot-time check that `identify` exists would have turned a silent production degradation into a failed deploy.
 
 **The real cleanup is to not need ImageMagick at all.** `libvips` was already in the image for Active Storage, and it can do everything those two MiniMagick call sites need. The follow-up isn't to keep patching the runtime — it's to migrate `encode_item_image` and `WatermarkService` off MiniMagick and onto `ruby-vips`, so the dependency I forgot to install becomes a dependency I no longer have. The best way to stop forgetting a thing is to delete the thing.
 
-If you run a multimodal feature in production, go check your logs for the equivalent of `0/25`. The model will never complain that you forgot to send it the picture. It'll just quietly do its best with half the input and hand you back something plausible — which is the most dangerous thing an AI can do.
+If you run a multimodal feature in production, go check your logs for the equivalent of `0/25`. The model will never complain that you forgot to send it the picture. It'll just [quietly do its best with half the input](/blog/emailed-312-users-three-fixes-48-hours/) and hand you back something plausible, which is the most dangerous thing an AI can do.
 
 ---
 

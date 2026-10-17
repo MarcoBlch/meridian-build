@@ -8,7 +8,7 @@ project: fastpass
 
 I run [FastPass](https://fastpass.email), a pay-to-reach tool where someone pays to guarantee a reply to their message. The public site is a Vite and React SPA, and I had done the thing you are supposed to do for SPA SEO: prerender every page to static HTML at build time with `@prerenderer`, so a crawler gets real content instead of an empty `<div id="root">`. Blog posts, a set of persona landing pages, and every professional profile in the directory all get snapshotted into HTML during the build.
 
-So I assumed SEO was handled. Then I opened Google Search Console and read the sitemap report. It listed 11 URLs. The site ships around 50 indexable pages.
+So I assumed [SEO was handled](/blog/two-sided-marketplace-cold-start-offer-not-seo/). Then I opened Google Search Console and read the sitemap report. It listed 11 URLs. The site ships around 50 indexable pages.
 
 ## Two lists that were supposed to be the same
 
@@ -46,7 +46,7 @@ Seven static routes, plus the blog posts it fetched from the database. Eleven UR
 
 ## The proof was in Search Console
 
-The tell was one line in the URL inspection. `/get-paid-to-answer-messages` was already indexed, which means Google had found it some other way (an internal link, most likely). Yet it was absent from the sitemap. Meanwhile the directory profiles, the long-tail pages that should catch searches for a specific person, had never been crawled at all. Google had no path to them: the sitemap did not list them, and the internal links to them sat behind client-side rendering.
+The tell was one line in the URL inspection. `/get-paid-to-answer-messages` was already indexed, which means Google had found it some other way (an internal link, most likely). Yet it was absent from the sitemap. Meanwhile the directory profiles, the long-tail pages that should catch searches for a specific person, had [never been crawled at all](/blog/1791-pages-zero-indexed/). Google had no path to them: the sitemap did not list them, and the internal links to them sat behind client-side rendering.
 
 I had built the indexable pages, then hidden the map to half of them.
 

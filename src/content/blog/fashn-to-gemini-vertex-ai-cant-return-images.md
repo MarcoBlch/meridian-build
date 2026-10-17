@@ -28,7 +28,7 @@ Cost in our own accounting — not a billed metric — was about $0.075 per call
 
 ## The simple version of the swap
 
-`GenerateVirtualTryOnJob` kept its name (legacy — it still kicks off from `OutfitSuggestion`), kept the queue, kept the `try_on_status` state machine, kept the Turbo Stream broadcasts. The only things that changed were the service object it called and what came back from it:
+`GenerateVirtualTryOnJob` kept its name (legacy: it still kicks off from `OutfitSuggestion`), kept the queue, kept the `try_on_status` [state machine](/blog/my-first-state-machine-in-rails/), kept the [Turbo Stream broadcasts](/blog/turbo-stream-broadcast-lost-on-mobile/). The only things that changed were the service object it called and what came back from it:
 
 ```ruby
 # before

@@ -90,4 +90,4 @@ The blank-page-on-direct-visit case is still there for those routes. It's a real
 
 ## The takeaway
 
-If a Hotwire feature breaks silently in production after passing local tests, the first thing I check now is whether the response contains more than one `<turbo-frame>` with the target id. Two frames with the same id is not an error to Turbo. It's just an instruction it follows the wrong way.
+If a [Hotwire feature breaks silently in production](/blog/turbo-stream-broadcast-lost-on-mobile/) after passing local tests, the first thing I check now is whether the response contains more than one `<turbo-frame>` with the target id. Two frames with the same id is not an error to Turbo. It's just an instruction it follows the wrong way.

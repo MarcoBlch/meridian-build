@@ -129,7 +129,7 @@ I'm not going to dress this up with a percentage. The counts are small — this 
 
 ## The takeaway
 
-For a solo founder, your metrics aren't a dashboard — they're your steering wheel. You don't have a growth team running experiments; you have a handful of numbers and the decisions you make because of them. Which means **data hygiene is a growth discipline, not a chore.** A signup table full of throwaway accounts doesn't just look untidy; it sends you off to fix a checkout that was never broken while the real lever sits untouched. The cleanup *is* the growth work, because it's what lets the next decision be the right one.
+For a solo founder, your metrics aren't a dashboard, they're your steering wheel. You don't have a growth team running experiments; you have a handful of numbers and the decisions you make because of them. Which means **data hygiene is a growth discipline, not a chore.** A signup table full of throwaway accounts doesn't just look untidy; it sends you off to [fix a checkout that was never broken](/blog/the-failed-payments-my-database-invented/) while the real lever sits untouched. The cleanup *is* the growth work, because it's what lets the next decision be the right one.
 
 Two things I'd tell my past self:
 
