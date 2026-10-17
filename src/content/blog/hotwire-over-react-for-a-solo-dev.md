@@ -164,7 +164,7 @@ I'm not going to pretend Hotwire has no trade-offs.
 
 **Hiring.** If I were building a team, finding React developers would be easier than finding Hotwire developers. Though any competent developer can learn Stimulus in an afternoon; it's deliberately simple.
 
-**Offline capability.** React with proper service workers and local state can work offline. Hotwire is fundamentally server-dependent. For a PWA like OutfitMaker, this means I can't offer offline outfit browsing (though I cache previously-viewed suggestions with service workers).
+**Offline capability.** React with proper service workers and local state can work offline. [Hotwire is fundamentally server-dependent](/blog/turbo-stream-broadcast-lost-on-mobile/). For a PWA like OutfitMaker, this means I can't offer offline outfit browsing (though I cache previously-viewed suggestions with service workers).
 
 ## Why it's enough for 90% of use cases
 

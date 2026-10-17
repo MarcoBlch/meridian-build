@@ -73,7 +73,7 @@ The questions I used are genuine user questions from my support inbox and Reddit
 
 I tried generating location-based pages: "Best wardrobe app in [City]" for 50 cities. The content was thin (mostly the same with city names swapped), and Google rightfully ignored them. None indexed. None ranked.
 
-Lesson: programmatic SEO works for genuinely location-specific content (restaurant listings, real estate). It doesn't work for products that have nothing to do with location. Don't force it.
+Lesson: [programmatic SEO](/blog/1791-pages-zero-indexed/) works for genuinely location-specific content (restaurant listings, real estate). It doesn't work for products that have nothing to do with location. Don't force it.
 
 ## What didn't work: Guest posting
 

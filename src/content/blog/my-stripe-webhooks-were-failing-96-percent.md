@@ -10,7 +10,7 @@ FastPass only works if money moves correctly. A sender pays, the money sits in e
 
 ## The setup
 
-[FastPass](https://fastpass.email) is a pay to reach platform. Someone pays to guarantee a reply from a busy person, the money is held in escrow, and it gets released or refunded based on what happens next. Stripe and Stripe Connect handle the money and the 75/25 split between the recipient and the platform. Every state change, a payment captured, a transfer made, a refund issued, arrives as a Stripe webhook. If the webhooks do not land, the whole machine freezes.
+[FastPass](https://fastpass.email) is a [pay to reach platform](/blog/two-sided-marketplace-cold-start-offer-not-seo/). Someone pays to guarantee a reply from a busy person, the money is held in escrow, and it gets released or refunded based on what happens next. Stripe and Stripe Connect handle the money and the 75/25 split between the recipient and the platform. Every state change, a payment captured, a transfer made, a refund issued, arrives as a Stripe webhook. If the webhooks do not land, the whole machine freezes.
 
 The webhook lives in a Supabase Edge Function, which runs on Deno, not Node. Hold that thought.
 
@@ -22,7 +22,7 @@ Every webhook starts by verifying Stripe's signature, so I know the call is real
 const event = stripe.webhooks.constructEvent(body, signature, webhookSecret)
 ```
 
-That line was fine on my laptop. In production it threw on every real event. Verification failed, so I rejected the event, so the payment update never ran. The dashboard showed green deploys, Stripe showed successful charges, and my database quietly fell behind reality.
+That line was fine on my laptop. In production it threw on every real event. Verification failed, so I rejected the event, so the payment update never ran. The dashboard showed green deploys, Stripe showed successful charges, and [my database quietly fell behind reality](/blog/the-failed-payments-my-database-invented/).
 
 ## The trap
 
@@ -58,6 +58,6 @@ if (seen) return ok({ skipped: true, reason: 'already_processed' })
 
 If you move a webhook, or any signature check, into an edge or Deno runtime and it starts failing for no obvious reason, suspect the crypto before you suspect your secret. Edge runtimes expose Web Crypto, which is async only. SDKs that grew up on Node ship synchronous helpers that quietly do not work there. The fix is almost always the same shape: find the `...Async` variant and await it. Stripe has `constructEventAsync`, and most libraries have an equivalent once you go looking.
 
-The scariest bugs are the ones where nothing crashes. My app was up, Stripe was happy, money was moving, and the only symptom was a number in a log I had not thought to read. I hit the mirror image of this on the same project, [a sitemap that quietly advertised the wrong pages](/blog/sitemap-advertised-11-pages-site-had-56/), where everything returned 200 and was still wrong.
+[The scariest bugs are the ones where nothing crashes](/blog/supabase-generatelink-does-not-send-email/). My app was up, Stripe was happy, money was moving, and the only symptom was a number in a log I had not thought to read. I hit the mirror image of this on the same project, [a sitemap that quietly advertised the wrong pages](/blog/sitemap-advertised-11-pages-site-had-56/), where everything returned 200 and was still wrong.
 
 If you want to see what it powers: FastPass lets you [get paid to answer messages](https://fastpass.email/get-paid-to-answer-messages) instead of drowning in a free inbox.

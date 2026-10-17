@@ -65,7 +65,7 @@ This is the part that actually mattered, and it's why I'm writing about a seven-
 
 The `incomplete` rows had grabbed my attention precisely because they looked like a problem. But they were a **vanity metric in reverse** — a number that looked like failure but measured nothing about money. Chasing them would have been hours spent hardening a webhook that was working fine.
 
-The actual leak in the business isn't at the top of the funnel where people click "subscribe" and wander off. Some tab-closing is normal and always will be. The leak is **downstream**: the checkout-completion rate for people who genuinely intend to pay, and week-one retention for the ones who do. That's where real money is decided, and my schema had been drawing my eye to the wrong end of the pipe.
+The actual leak in the business isn't at [the top of the funnel](/blog/blocking-7500-disposable-email-domains/) where people click "subscribe" and wander off. Some tab-closing is normal and always will be. The leak is **downstream**: the checkout-completion rate for people who genuinely intend to pay, and [week-one retention](/blog/emailed-312-users-three-fixes-48-hours/) for the ones who do. That's where real money is decided, and my schema had been drawing my eye to the wrong end of the pipe.
 
 So the cleanup did two useful things, and only one of them was deleting rows. It removed the noise, and — more importantly — it forced me to define, in code, the difference between "started a checkout" and "became a customer." Once those are distinct, the funnel can finally tell the truth: how many people *start* checkout, how many *finish*, and how many are still around a week later. Those are the numbers worth an incident. `incomplete` never was.
 

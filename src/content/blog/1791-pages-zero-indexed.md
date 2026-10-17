@@ -12,7 +12,7 @@ Zero. Not "growing slowly." Not "a few hundred." None.
 
 ## The collapse I did to myself
 
-The sitemap had no errors. The pages returned 200. So my first instinct was wrong: this was not a technical break waiting to be found. It was history.
+The sitemap had no errors. [The pages returned 200](/blog/soft-404-hid-my-multi-tenant-saas/). So my first instinct was wrong: this was not a technical break waiting to be found. It was history.
 
 Back in April, I had shipped what I thought was a clever canonical strategy. Every programmatic variant (say `/percent/what-is-10-percent-of-100`) pointed its canonical tag at the parent calculator (`/percentage-calculator`). The idea was to concentrate ranking signals on a few strong pages. What Google actually heard was simpler: "do not index these 1,800 variants, only the parent." Over about six weeks, my indexed pages fell from roughly 1,800 to 2.
 
@@ -47,6 +47,6 @@ Two lessons, both paid for in indexed pages.
 
 First: a canonical tag is an instruction, not a suggestion, and pointing thousands of pages away from themselves is a fast way to tell Google to forget you exist. If you run programmatic pages, each one is its own canonical, full stop.
 
-Second, and this is the one that actually matters: for a young programmatic site, the bottleneck is almost never more pages. It is authority. I had 1,791 well-built pages and no reason for anyone, human or crawler, to trust them. The fix for that is not in the codebase, it is off it, in the links and mentions that tell Google the domain is worth the crawl. I wrote more about that reality in [what actually moved the needle on SEO](/blog/seo-for-indie-hackers-what-actually-worked/).
+Second, and this is the one that actually matters: for a young programmatic site, [the bottleneck is almost never more pages](/blog/two-sided-marketplace-cold-start-offer-not-seo/). It is authority. I had 1,791 well-built pages and no reason for anyone, human or crawler, to trust them. The fix for that is not in the codebase, it is off it, in the links and mentions that tell Google the domain is worth the crawl. I wrote more about that reality in [what actually moved the needle on SEO](/blog/seo-for-indie-hackers-what-actually-worked/).
 
 I would love to end this with a recovery chart. I can't yet. The junk is cleared, the sitemap is clean, the first real backlinks are going in, and now it is a waiting game on the crawler. The honest status is: I understand exactly why it broke, I have stopped digging, and I am rebuilding trust one link at a time.

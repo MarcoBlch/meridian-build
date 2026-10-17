@@ -175,7 +175,7 @@ I covered the new-vs-returning logic at the model level too, because it's the lo
 
 ## The result
 
-After the second deploy, Kaunta started showing real signups where there had only ever been a flat line — and the rest of the chain (Activation, the post-wow upgrade prompts) lit up with it. OutfitMaker is small enough that these are modest counts, but the point isn't the magnitude. It's that the dashboard finally describes the product instead of contradicting it.
+After the second deploy, Kaunta started showing [real signups](/blog/blocking-7500-disposable-email-domains/) where there had only ever been a flat line, and the rest of the chain (Activation, the post-wow upgrade prompts) lit up with it. OutfitMaker is small enough that these are modest counts, but the point isn't the magnitude. It's that the dashboard finally describes the product instead of contradicting it.
 
 ## The takeaway
 
@@ -184,4 +184,4 @@ Instrumentation that silently reports zero is worse than none, because you act o
 1. **In a Turbo app, never fire analytics from a `<head>` `DOMContentLoaded` script.** Your most important events arrive on Turbo visits, where that listener is already too late. Fire from a Stimulus `connect()` and wait for your script to be ready instead of guarding once and giving up.
 2. **A funnel's top must cover every path into it.** I instrumented the signup flow I wrote first and assumed it was *the* signup flow. The one my users actually used was untouched. Count the doors before you trust the turnstile.
 
-The quiet bugs are the expensive ones. A crash gets fixed the same day. A zero that should be a number can sit there for as long as you're willing to believe your product is just quiet.
+[The quiet bugs are the expensive ones](/blog/supabase-generatelink-does-not-send-email/). A crash gets fixed the same day. A zero that should be a number can sit there for as long as you're willing to believe your product is just quiet.

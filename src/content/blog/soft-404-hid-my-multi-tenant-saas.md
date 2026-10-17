@@ -10,7 +10,7 @@ Google Search Console has a category that sounds harmless and is not: "Soft 404.
 
 ## The setup: one codebase, many faces
 
-Eglise en Ligne is multi-tenant and multi-domain. Each church gets its own public site on a subdomain (`demo.egliseenligne.fr`), and the marketing site runs on three country domains: [egliseenligne.fr](https://egliseenligne.fr) for France, [iglesiaenlinea.es](https://iglesiaenlinea.es) for Spain, and [igrejaemlinha.pt](https://igrejaemlinha.pt) for Portugal. It is a Next.js App Router project, and a middleware decides, per request, whether a hostname is a tenant church or a marketing domain, injecting `x-church-*` headers when it is a tenant.
+Eglise en Ligne is [multi-tenant and multi-domain](/blog/supabase-generatelink-does-not-send-email/). Each church gets its own public site on a subdomain (`demo.egliseenligne.fr`), and the marketing site runs on three country domains: [egliseenligne.fr](https://egliseenligne.fr) for France, [iglesiaenlinea.es](https://iglesiaenlinea.es) for Spain, and [igrejaemlinha.pt](https://igrejaemlinha.pt) for Portugal. It is a Next.js App Router project, and a middleware decides, per request, whether a hostname is a tenant church or a marketing domain, injecting `x-church-*` headers when it is a tenant.
 
 The tenant public pages live under a `[locale]` route group. On a real church subdomain the middleware sets a church context, and the page renders that church. So far so good.
 
@@ -25,7 +25,7 @@ if (!church) return <div>Church not found</div>;
 
 Read that closely. When there is no church, it returns a div. A div is a successful render, so the response is HTTP 200. To a visitor it says "Church not found." To Googlebot it says "200 OK, here is your content," and the content is a bare error message. That is the textbook recipe for a Soft 404, and it was happening on every locale path, on all three ccTLDs at once.
 
-Worse, these pages carried `robots: index, follow`, so I was actively inviting Google to crawl pages that were pure noise. Crawl budget I did not have to spare was going to `/fr`, `/es`, `/blog`, `/fr/events`, and friends.
+Worse, these pages carried `robots: index, follow`, so I was actively inviting Google to crawl pages that were pure noise. [Crawl budget I did not have to spare](/blog/1791-pages-zero-indexed/) was going to `/fr`, `/es`, `/blog`, `/fr/events`, and friends.
 
 ## The fix: return a real 404
 

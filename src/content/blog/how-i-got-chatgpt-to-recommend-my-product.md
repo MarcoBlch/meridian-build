@@ -137,7 +137,7 @@ Similarly, my "How to organize your closet with AI" article answers a specific q
 
 ## What I think is happening under the hood
 
-I can't prove this, but my theory: LLMs recommend products they've seen mentioned positively in multiple, independent sources. My Reddit posts, blog articles, Product Hunt listing, and indie hacker community mentions create a web of references. No single source is responsible; it's the cumulative presence across the training data.
+I can't prove this, but my theory: LLMs recommend products they've seen mentioned positively in multiple, independent sources. [My Reddit posts](/blog/building-in-public-while-still-learning/), blog articles, Product Hunt listing, and indie hacker community mentions create a web of references. No single source is responsible; it's the cumulative presence across the training data.
 
 This means GEO isn't a one-time optimization. It's a long game of being genuinely present, genuinely useful, and genuinely visible across the web. Gaming it with fake reviews or spam mentions would probably backfire. LLMs are trained to recognize and discount low-quality sources.
 

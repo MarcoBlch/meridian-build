@@ -61,7 +61,7 @@ Two decisions in there I'd defend in review:
 
 ## Wiring the guard into the read path
 
-The search method now reads as a strict priority list: cache first, then the budget guard, then (only if both let it through) a real network call, wrapped in the circuit breaker I [wrote about here](/blog/circuit-breakers-in-production-rails-patching-the-gem):
+The search method now reads as a strict priority list: cache first, then the budget guard, then (only if both let it through) a real network call, wrapped in the circuit breaker I [wrote about here](/blog/circuit-breakers-in-production-rails-patching-the-gem/):
 
 ```ruby
 response_body = if cached_body
@@ -95,4 +95,4 @@ If a third-party API bills by usage and offers no spend cap, assume it never wil
 2. **Fail open.** A cost guard that can cause an outage is a liability, not a safeguard.
 3. **Cache like the data is stale-tolerant**, because most of it is. Stretching a TTL is free quota.
 
-The provider's job is to sell you requests. Deciding how many you can afford is yours.
+The provider's job is to sell you requests. Deciding how many you can afford is yours, and sometimes the right number at runtime is zero, which is why [the mascot in my kids app never calls an LLM live](/blog/llm-in-a-kids-app-pre-generated-dialogue/).
