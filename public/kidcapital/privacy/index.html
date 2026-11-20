@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidCapital : confidentialité / Privacy</title>
+    <style>
+        :root {
+            --bg: #fdf8ee;
+            --card: #ffffff;
+            --text: #2d2a26;
+            --muted: #6b645b;
+            --green: #2b6a4e;
+            --green-soft: #eaf4ee;
+            --line: #ece4d6;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 24px 16px;
+        }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card);
+            padding: 32px 28px;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+        }
+
+        .brand { font-size: 1.6em; font-weight: 800; color: var(--green); margin: 0; }
+        .langs { margin: 8px 0 24px; color: var(--muted); }
+        .langs a { color: var(--green); font-weight: 600; }
+        h1 { font-size: 1.5em; margin: 0 0 4px; }
+        h2 { font-size: 1.15em; color: var(--green); margin-top: 28px; }
+        .dates { color: var(--muted); margin: 0 0 16px; }
+        .summary { background: var(--green-soft); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95em; }
+        th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
+        th { color: var(--muted); font-weight: 600; }
+        hr { border: 0; border-top: 2px solid var(--line); margin: 40px 0; }
+        a { color: var(--green); }
+
+        @media (max-width: 560px) {
+            main { padding: 24px 16px; }
+            table, thead, tbody, tr, th, td { display: block; }
+            thead { display: none; }
+            td { border: 0; padding: 2px 0; }
+            tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p class="brand">KidCapital</p>
+        <p class="langs"><a href="#fr">Français</a> · <a href="#en">English</a></p>
+
+        <!-- ============================ FRANÇAIS ============================ -->
+        <section id="fr" lang="fr">
+            <h1>Politique de confidentialité</h1>
+            <p class="dates">En vigueur le 23 octobre 2026. Remplace la version du 7 mars 2026.</p>
+
+            <p>KidCapital est un jeu de plateau éducatif qui apprend l'argent aux enfants de 8 à 14 ans. Il est
+                édité par <strong>Meridian Build</strong>, responsable du traitement des données décrites ici.
+                Contact : <a href="mailto:elasistentepepe@gmail.com">elasistentepepe@gmail.com</a>.</p>
+
+            <div class="summary">
+                <strong>En bref.</strong> Pas d'email, pas de téléphone, pas de photo, pas de localisation. Pas de
+                publicité, pas d'outil de mesure d'audience, pas d'identifiant publicitaire. Au premier lancement,
+                l'app crée un compte anonyme (un identifiant aléatoire) pour faire fonctionner le classement et le
+                jeu entre amis. Le prénom tapé par l'enfant reste sur l'appareil, sauf en partie multijoueur où il
+                est montré aux autres joueurs de la partie.
+            </div>
+
+            <h2>1. Ce qui reste sur l'appareil</h2>
+            <p>Le prénom ou surnom tapé au début de la partie, l'avatar choisi, la partie en cours, les réglages
+                (langue, son), la progression (niveau, succès), la série de bonus quotidiens et le statut premium.
+                Ces données ne quittent pas l'appareil (sauf les cas listés en partie 2) et disparaissent quand
+                l'app est désinstallée.</p>
+
+            <h2>2. Ce qui est envoyé à nos serveurs</h2>
+            <table>
+                <thead>
+                    <tr><th>Quand</th><th>Quelles données</th><th>Qui peut les voir</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Premier lancement</td>
+                        <td>Un compte anonyme : identifiant aléatoire, sans email ni mot de passe.</td>
+                        <td>Personne d'autre que l'appareil lui-même.</td>
+                    </tr>
+                    <tr>
+                        <td>Fin de chaque partie</td>
+                        <td>Avatar, niveau, points d'expérience, valeur nette atteinte dans la partie.</td>
+                        <td>Uniquement l'appareil qui les a envoyées.</td>
+                    </tr>
+                    <tr>
+                        <td>Victoire</td>
+                        <td>Classement « Speed Run » : un pseudo créé automatiquement (un animal et 3 chiffres,
+                            par exemple « Renard 583 »), l'avatar, le nombre de mois et le niveau de difficulté.
+                            Le prénom tapé n'est jamais utilisé : le serveur refuse tout autre pseudo.</td>
+                        <td>Tous les joueurs de KidCapital (classement public dans l'app).</td>
+                    </tr>
+                    <tr>
+                        <td>Partie avec un ami</td>
+                        <td>Le code d'invitation, le prénom ou surnom tapé (14 caractères maximum), l'avatar et
+                            l'état de la partie.</td>
+                        <td>Uniquement les joueurs de cette partie. Conseil aux parents : utilisez un surnom.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Comme pour tout service en ligne, nos hébergeurs reçoivent aussi l'adresse IP et des informations
+                techniques de connexion, nécessaires pour faire fonctionner le service et le protéger. Nous ne nous
+                en servons pas pour identifier qui que ce soit.</p>
+
+            <h2>3. Ce que nous ne faisons pas</h2>
+            <ul>
+                <li>Pas de collecte d'email, de numéro de téléphone, d'adresse, de photo ou de localisation.</li>
+                <li>Pas de publicité, pas de régie publicitaire, pas d'identifiant publicitaire (IDFA, AAID).</li>
+                <li>Pas d'outil de mesure d'audience ni de pistage du comportement.</li>
+                <li>Pas de messagerie entre joueurs.</li>
+                <li>Pas de vente ni de location de données.</li>
+            </ul>
+
+            <h2>4. Achats intégrés</h2>
+            <p>L'offre premium s'achète via l'App Store ou Google Play, derrière une question réservée aux adultes
+                et le contrôle parental du store (par exemple « Demander l'autorisation » sur iPhone). Nous ne
+                recevons aucune donnée de paiement. Notre prestataire RevenueCat reçoit un identifiant d'achat
+                anonyme et le reçu du store, pour vérifier si le premium est actif.</p>
+
+            <h2>5. Nos prestataires</h2>
+            <ul>
+                <li><strong>Supabase</strong> : hébergement de la base de données et des comptes anonymes
+                    (<a href="https://supabase.com/privacy">politique</a>).</li>
+                <li><strong>RevenueCat</strong> : vérification des achats intégrés
+                    (<a href="https://www.revenuecat.com/privacy">politique</a>).</li>
+                <li><strong>Apple et Google</strong> : distribution de l'app et paiements, selon leurs propres
+                    politiques.</li>
+            </ul>
+            <p>Ces prestataires peuvent traiter des données hors de l'Union européenne. Ces transferts sont encadrés
+                par les garanties prévues dans leurs contrats (clauses contractuelles types de la Commission
+                européenne).</p>
+
+            <h2>6. Pourquoi et combien de temps</h2>
+            <p>Nous traitons ces données uniquement pour faire fonctionner le jeu : sauvegarder la progression,
+                afficher le classement, permettre les parties entre amis et vérifier les achats. Il n'y a ni
+                profilage ni décision automatisée. Les données sont conservées tant que l'app est utilisée, ou
+                jusqu'à une demande de suppression. Nous ne supprimons pas encore automatiquement les comptes
+                inactifs : la suppression se fait sur demande (partie 7).</p>
+
+            <h2>7. Vos droits et la suppression</h2>
+            <p>Les parents (et les joueurs) peuvent demander l'accès, la correction ou la suppression des données,
+                ou s'opposer à leur traitement. Écrivez à
+                <a href="mailto:elasistentepepe@gmail.com">elasistentepepe@gmail.com</a>. Comme le compte est
+                anonyme, indiquez-nous le pseudo du classement (par exemple « Renard 583 ») ou le code d'une partie
+                entre amis pour que nous retrouvions les données. Nous répondons sous 30 jours. Désinstaller l'app
+                efface tout ce qui est stocké sur l'appareil. En cas de désaccord, vous pouvez saisir la CNIL
+                (<a href="https://www.cnil.fr">cnil.fr</a>) ou l'autorité de votre pays.</p>
+
+            <h2>8. Sécurité</h2>
+            <p>Tous les échanges avec nos serveurs sont chiffrés (HTTPS). Chaque appareil ne peut lire que ses
+                propres données, et une partie entre amis n'est visible que par ses joueurs.</p>
+
+            <h2>9. Modifications</h2>
+            <p>Si cette politique change, nous mettons à jour la date en haut de la page. En cas de changement
+                important sur les données collectées, nous le signalerons dans l'app.</p>
+        </section>
+
+        <hr>
+
+        <!-- ============================= ENGLISH ============================= -->
+        <section id="en" lang="en">
+            <h1>Privacy Policy</h1>
+            <p class="dates">Effective October 23, 2026. Replaces the version of March 7, 2026.</p>
+
+            <p>KidCapital is an educational board game that teaches money skills to children aged 8 to 14. It is
+                published by <strong>Meridian Build</strong>, the controller of the data described here.
+                Contact: <a href="mailto:elasistentepepe@gmail.com">elasistentepepe@gmail.com</a>.</p>
+
+            <div class="summary">
+                <strong>In short.</strong> No email, no phone number, no photos, no location. No ads, no analytics,
+                no advertising identifier. On first launch the app creates an anonymous account (a random
+                identifier) so the leaderboard and games with friends work. The name a child types stays on the
+                device, except in a game with friends, where it is shown to the other players of that game.
+            </div>
+
+            <h2>1. What stays on the device</h2>
+            <p>The first name or nickname typed at the start of a game, the chosen avatar, the game in progress,
+                settings (language, sound), progress (level, achievements), the daily bonus streak and the premium
+                status. This data does not leave the device (except as listed in section 2) and is removed when the
+                app is uninstalled.</p>
+
+            <h2>2. What is sent to our servers</h2>
+            <table>
+                <thead>
+                    <tr><th>When</th><th>What</th><th>Who can see it</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First launch</td>
+                        <td>An anonymous account: a random identifier, with no email or password.</td>
+                        <td>Nobody but the device itself.</td>
+                    </tr>
+                    <tr>
+                        <td>End of each game</td>
+                        <td>Avatar, level, experience points, net worth reached in the game.</td>
+                        <td>Only the device that sent it.</td>
+                    </tr>
+                    <tr>
+                        <td>Winning a game</td>
+                        <td>"Speed Run" leaderboard: an automatically generated nickname (an animal and 3 digits,
+                            such as "Fox 583"), the avatar, the number of months and the difficulty level. The
+                            typed name is never used: the server rejects any other nickname.</td>
+                        <td>All KidCapital players (public leaderboard in the app).</td>
+                    </tr>
+                    <tr>
+                        <td>Game with a friend</td>
+                        <td>The invite code, the typed first name or nickname (14 characters at most), the avatar
+                            and the game state.</td>
+                        <td>Only the players of that game. Tip for parents: use a nickname.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>As with any online service, our hosting providers also receive the IP address and technical
+                connection details, needed to run and protect the service. We do not use them to identify
+                anyone.</p>
+
+            <h2>3. What we do not do</h2>
+            <ul>
+                <li>No collection of email, phone number, address, photos or location.</li>
+                <li>No ads, no ad networks, no advertising identifier (IDFA, AAID).</li>
+                <li>No analytics or behavioral tracking.</li>
+                <li>No messaging between players.</li>
+                <li>No selling or renting of data.</li>
+            </ul>
+
+            <h2>4. In-app purchases</h2>
+            <p>Premium is bought through the App Store or Google Play, behind a question meant for adults and the
+                store's parental controls (such as "Ask to Buy" on iPhone). We receive no payment data. Our
+                provider RevenueCat receives an anonymous purchase identifier and the store receipt, to check
+                whether premium is active.</p>
+
+            <h2>5. Our providers</h2>
+            <ul>
+                <li><strong>Supabase</strong>: database and anonymous account hosting
+                    (<a href="https://supabase.com/privacy">policy</a>).</li>
+                <li><strong>RevenueCat</strong>: in-app purchase verification
+                    (<a href="https://www.revenuecat.com/privacy">policy</a>).</li>
+                <li><strong>Apple and Google</strong>: app distribution and payments, under their own
+                    policies.</li>
+            </ul>
+            <p>These providers may process data outside the European Union. Such transfers are covered by the
+                safeguards in their contracts (European Commission standard contractual clauses).</p>
+
+            <h2>6. Why, and for how long</h2>
+            <p>We process this data only to run the game: saving progress, showing the leaderboard, enabling games
+                with friends and verifying purchases. There is no profiling and no automated decision-making. Data
+                is kept while the app is in use, or until a deletion request. We do not yet delete inactive
+                accounts automatically: deletion is done on request (section 7).</p>
+
+            <h2>7. Your rights and deletion</h2>
+            <p>Parents (and players) can ask to access, correct or delete the data, or object to its processing.
+                Write to <a href="mailto:elasistentepepe@gmail.com">elasistentepepe@gmail.com</a>. Since the account
+                is anonymous, tell us the leaderboard nickname (such as "Fox 583") or the code of a game with
+                friends so we can find the data. We reply within 30 days. Uninstalling the app removes everything
+                stored on the device. If you disagree with our answer, you can contact your data protection
+                authority (in France, the CNIL: <a href="https://www.cnil.fr">cnil.fr</a>).</p>
+
+            <h2>8. Security</h2>
+            <p>All traffic with our servers is encrypted (HTTPS). Each device can only read its own data, and a
+                game with friends is visible only to its players.</p>
+
+            <h2>9. Changes</h2>
+            <p>If this policy changes, we update the date at the top of the page. If the data we collect changes
+                in an important way, we will say so in the app.</p>
+        </section>
+    </main>
+</body>
+
+</html>
